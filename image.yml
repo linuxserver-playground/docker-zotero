@@ -8,9 +8,9 @@ summary: |-
 upstream:
   url: https://www.zotero.org/
   version:
-    type: command
-    run: |-
-      curl -sL https://www.zotero.org/download/ | awk -F'linux-x86_64' '/linux-x86_64/ {print $2}' | awk -F'"' '{print $3}' | tail -n1
+    type: regex
+    url: https://www.zotero.org/download/
+    pattern: '"linux-x86_64":"([^"]+)"'
 
 release:
   branch: master
