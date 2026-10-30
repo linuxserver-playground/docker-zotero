@@ -11,6 +11,8 @@ upstream:
     type: regex
     url: https://www.zotero.org/download/
     pattern: '"linux-x86_64":"([^"]+)"'
+    require_assets:
+      - 'https://download.zotero.org/client/release/${VERSION}/Zotero-${VERSION}_linux-x86_64.tar.xz'
 
 release:
   branch: master
